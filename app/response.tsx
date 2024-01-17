@@ -2,24 +2,24 @@
 
 import { useEffect, useState } from "react";
 
-export default function Response({
-  content,
-  speed,
-}: {
+interface ResponseProps {
   content: string;
   speed?: number;
-}) {
+}
+
+export default function Response({ content, speed = 100 }: ResponseProps) {
   const [currentText, setCurrentText] = useState("");
 
   useEffect(() => {
     let currentIndex = 0;
     const intervalId = setInterval(() => {
-      setCurrentText((prevText) => prevText + content[currentIndex]);
-      currentIndex += 1;
-
-      if (currentIndex === content.length) {
+      setCurrentText((prevText) => {
+        if (currentIndex < content.length) {
+          return prevText + content[currentIndex++];
+        }
         clearInterval(intervalId);
-      }
+        return prevText;
+      });
     }, speed);
 
     return () => clearInterval(intervalId);
