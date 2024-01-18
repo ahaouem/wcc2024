@@ -6,6 +6,7 @@ export default function QuestionnaireForm() {
   const [assistantResponse, setAssistantResponse] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState("en");
   const [userInput, setUserInput] = useState("");
+  const [prompt, setPrompt] = useState("");
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     setAssistantResponse("");
@@ -28,8 +29,7 @@ export default function QuestionnaireForm() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization:
-              "Bearer",
+            Authorization: "Bearer ",
           },
           body: JSON.stringify({
             model: "gpt-3.5-turbo",
@@ -43,7 +43,7 @@ export default function QuestionnaireForm() {
               },
               {
                 role: "user",
-                content: content,
+                content: `${prompt} ${content}`,
               },
             ],
           }),
@@ -107,6 +107,21 @@ export default function QuestionnaireForm() {
           />
         </fieldset>
 
+        <fieldset>
+          <label
+            htmlFor="prompt"
+            className="text-sm font-medium leading-none mb-1">
+            Prompt
+          </label>
+          <input
+            className="flex w-full rounded-md ring-1 ring-zinc-950/10 bg-transparent px-3 py-2 text-sm shadow placeholder:text-zinc-500"
+            type="text"
+            name="prompt"
+            value={prompt}
+            onChange={(e) => setPrompt(e.target.value)}
+          />
+        </fieldset>
+
         <div className="flex justify-between items-center">
           <button
             className="h-9 px-4 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors bg-red-500 text-white shadow hover:bg-red-600"
@@ -117,7 +132,7 @@ export default function QuestionnaireForm() {
           <button
             className="h-9 px-4 py-2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors bg-zinc-900 text-zinc-50 shadow hover:bg-zinc-900/90"
             type="submit">
-            Ask Assistant
+            Ask
           </button>
         </div>
       </form>
@@ -125,7 +140,7 @@ export default function QuestionnaireForm() {
         <div className="mt-4 space-y-3">
           <div className="flex items-center justify-between gap-4">
             <h3 className="font-semibold leading-none tracking-tight">
-              Assistant Answer
+              Result
             </h3>
             <button
               className="inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors hover:bg-zinc-100 hover:text-zinc-900 h-8 rounded-md px-3 text-xs"
