@@ -1,4 +1,4 @@
-import SummarizerForm from "./summarizer-form";
+import QuestionnaireForm from "./questionnaire-form";
 
 export default function Home() {
   return (
@@ -6,14 +6,14 @@ export default function Home() {
       <div className="rounded-3xl ring-1 ring-zinc-950/5 bg-white text-zinc-950 shadow max-w-xl w-full p-6">
         <div className="flex flex-col gap-y-1.5 mb-6">
           <h1 className="font-semibold leading-none tracking-tight">
-            Article Summarizer
+            Ask Assistant
           </h1>
           <p className="text-sm text-zinc-500">
-            Summarize any article or text with this simple tool!
+            Ask any question and get quick answer.
           </p>
         </div>
         <div className="grid">
-          <SummarizerForm />
+          <QuestionnaireForm />
         </div>
       </div>
     </div>
