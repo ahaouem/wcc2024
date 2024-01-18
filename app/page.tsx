@@ -1,4 +1,4 @@
-import QuestionnaireForm from "./questionnaire-form";
+import Form from "./form";
 
 export default function Home() {
   return (
@@ -6,14 +6,12 @@ export default function Home() {
       <div className="rounded-3xl ring-1 ring-zinc-950/5 bg-white text-zinc-950 shadow max-w-xl w-full p-6">
         <div className="flex flex-col gap-y-1.5 mb-6">
           <h1 className="font-semibold leading-none tracking-tight">
-            Ask Assistant
+            Personal Assistant
           </h1>
-          <p className="text-sm text-zinc-500">
-            Ask any question and get quick answer.
-          </p>
+          <p className="text-sm text-zinc-500">Ask for help with anything.</p>
         </div>
         <div className="grid">
-          <QuestionnaireForm />
+          <Form />
         </div>
       </div>
     </div>
