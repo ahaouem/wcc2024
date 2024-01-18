@@ -4,9 +4,9 @@ Projekt skierowany do młodych talentów programistycznych, mający na celu uśw
 
 ## Struktura Projektu
 
-- `app/form.tsx`: Jest to główny komponent aplikacji. Zawiera formularz, w którym użytkownicy mogą wprowadzać swoje zapytania. Formularz obsługuje przesyłanie tych zapytań do API OpenAI i wyświetlanie odpowiedzi.
-- `app/layout.tsx`: Jest to komponent układu, który otacza główny komponent formularza.
-- `app/page.tsx`: Komponent Home reprezentujący główną stronę aplikacji, z której użytkownicy mogą korzystać.
+- `app/layout.tsx`: Jest to komponent układu, który otacza główny komponent strony.
+  - `app/page.tsx`: Komponent Home reprezentujący główną stronę aplikacji, z której użytkownicy mogą korzystać. Obejmuje:
+    - `app/form.tsx`: Jest to główny komponent aplikacji. Zawiera formularz, w którym użytkownicy mogą wprowadzać swoje zapytania. Formularz obsługuje przesyłanie tych zapytań do API OpenAI i wyświetlanie odpowiedzi.
 
 ## Instalacja
 
