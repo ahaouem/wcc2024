@@ -61,8 +61,8 @@ export default function Form() {
   function handleCopyToClipboard() {
     navigator.clipboard
       .writeText(result)
-      .then(() => toast.success("Response copied to clipboard"))
-      .catch(() => toast.error("Error copying response to clipboard"));
+      .then(() => toast.success("Result copied to clipboard"))
+      .catch(() => toast.error("Error copying result to clipboard"));
   }
 
   return (
