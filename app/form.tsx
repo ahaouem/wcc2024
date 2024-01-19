@@ -57,7 +57,7 @@ export default function Form() {
       toast.error("Error occurred while fetching data. Please try again.");
     }
   }
-w
+
   function handleCopyToClipboard() {
     navigator.clipboard
       .writeText(result)
